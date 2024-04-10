@@ -13,16 +13,23 @@
 <body>
 	<div class = "container">
 			<div class = "Data_Input">
-				<p class = "login_text"> <a href="./login.jsp"> LOG-IN </a> </p>
+				<p class = "Signup_text"> <a href="./signup_1.jsp"> SIGN-UP </a> </p>
 				<form>
-					<input type="text" id="ID_Input" placeholder="ID">
-	            	<input type="password" id="PW_Input" placeholder="PW">
+					<select id="age">
+						<option id="age_option" selected>나이</option>
+				        <option id="age_option"> 20
+				        <option id="age_option"> 21
+				        <option id="age_option"> 22
+				        <option id="age_option"> 23
+				        <option id="age_option"> 24
+					</select>
+					<select id="gender">
+						<option id="gender_option" selected>남</option>
+				        <option id="gender_option"> 여
+					</select>
+					<input type="text" id="introduction" placeholder="소개글">
+					<input type="submit" id="Signup_button" value="회원가입">
 				</form>
-           		<label id="remember_check">
-	                <input type="checkbox" id="remember_check_box"> 아이디 저장 
-            	</label>
-            		<p id="Signup_text"> <a href="./signup_1.jsp"> 회원가입 </a> </p>
-	            	<input type="submit" id="Login_button" value="로그인">
 			</div>
 	</div>
 </body>
@@ -60,7 +67,7 @@
     top: 137px;
 	}										
 	
-	.login_text {
+	.Signup_text {
 	font-size: 40px;
 	color: #539A74;
 	text-align: center;
@@ -70,9 +77,10 @@
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 	}										
 	
-	#ID_Input {
+	
+	#age{
 	vertical-align: bottom;
-	width: 320px;
+	width: 145px;
 	height: 40px;
 	border-radius: 50px;		
 	outline: 1px;
@@ -80,64 +88,74 @@
 	margin: auto;
 	position: relative;
     top: 210px;
-    margin-left: 85px;
+    margin-left: 90px;
     padding: 0 0 0 10px;
+    color: #539A74;
     font-size: 30px;
 	font-family: "Pretendard Variable";
 	}
 	
-	#ID_Input::placeholder{
-	width: 100%;
-	height: 100%;
-	font-size: 24px;
+	#age_option{
+	font-size: 30px;
 	color: #539A74;
 	text-align: left;
 	padding: 10px;
 	}
-
-	#PW_Input {
-	width: 320px;
+	
+	#gender{
+	vertical-align: bottom;
+	width: 145px;
 	height: 40px;
 	border-radius: 50px;		
 	outline: 1px;
 	border-color: #539A74;
 	margin: auto;
 	position: relative;
-    top: 242px;
-    margin-left: 85px;
+    top: 210px;
+    margin-left: 30px;
     padding: 0 0 0 10px;
+    color: #539A74;
     font-size: 30px;
 	font-family: "Pretendard Variable";
 	}
 	
-	#PW_Input::placeholder{
-	width: 100%;
-	height: 100%;
-	font-size: 24px;
+	#gender_option{
+	font-size: 30px;
 	color: #539A74;
 	text-align: left;
 	padding: 10px;
 	}
 	
-	#remember_check{
+	#introduction {
+	width: 320px;
+	height: 180px;
+	border-radius: 15px;		
+	border-width: 2px;
+	border-color: #539A74;
 	position: relative;
-    top: 260px;
-    margin-left: 90px;
-    color: #539A74;
-    }
+    top: 250px;
+    margin-left: 85px;
+    padding: 0 0 0 10px;
+    font-size: 30px;
+	font-family: "Pretendard Variable";
+	
+	}
+	
+	#introduction::placeholder{
+	width: 100%;
+	height: 100%;
+	vertical-align : top;
+	font-size: 24px;
+	color: #539A74;
+	text-align: left;
+	padding: 10px;
+	}
     
-    #Signup_text{
-    position: relative;
-    top: 240px;
-    margin-left: 345px;
-    color: #539A74;
-    }
-    
-    #Login_button{
+    #Signup_button{
     width: 350px;
     height: 55px;
     position: relative;
-    top: 395px;
+    top: 300px;
     background-color: #539A74;
     color: white;
     border: none;

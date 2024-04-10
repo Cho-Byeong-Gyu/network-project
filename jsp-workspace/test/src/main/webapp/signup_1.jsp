@@ -13,16 +13,13 @@
 <body>
 	<div class = "container">
 			<div class = "Data_Input">
-				<p class = "login_text"> <a href="./login.jsp"> LOG-IN </a> </p>
+				<p class = "Signup_text"> <a href="./signup_1.jsp"> SIGN-UP </a> </p>
 				<form>
 					<input type="text" id="ID_Input" placeholder="ID">
 	            	<input type="password" id="PW_Input" placeholder="PW">
+	            	<input type="text" id="name_Input" placeholder="이름">
+	            	<input type="button" id="next_button" value="다음"  onClick="location.href='./signup_2.jsp'">
 				</form>
-           		<label id="remember_check">
-	                <input type="checkbox" id="remember_check_box"> 아이디 저장 
-            	</label>
-            		<p id="Signup_text"> <a href="./signup_1.jsp"> 회원가입 </a> </p>
-	            	<input type="submit" id="Login_button" value="로그인">
 			</div>
 	</div>
 </body>
@@ -60,7 +57,7 @@
     top: 137px;
 	}										
 	
-	.login_text {
+	.Signup_text {
 	font-size: 40px;
 	color: #539A74;
 	text-align: center;
@@ -103,7 +100,7 @@
 	border-color: #539A74;
 	margin: auto;
 	position: relative;
-    top: 242px;
+    top: 253px;
     margin-left: 85px;
     padding: 0 0 0 10px;
     font-size: 30px;
@@ -119,21 +116,32 @@
 	padding: 10px;
 	}
 	
-	#remember_check{
+	#name_Input {
+	width: 320px;
+	height: 40px;
+	border-radius: 50px;		
+	outline: 1px;
+	border-color: #539A74;
+	margin: auto;
 	position: relative;
-    top: 260px;
-    margin-left: 90px;
-    color: #539A74;
-    }
+    top: 296px;
+    margin-left: 85px;
+    padding: 0 0 0 10px;
+    font-size: 30px;
+	font-family: "Pretendard Variable";
+	}
+	
+	#name_Input::placeholder{
+	width: 100%;
+	height: 100%;
+	font-size: 24px;
+	color: #539A74;
+	text-align: left;
+	padding: 10px;
+	}
+	
     
-    #Signup_text{
-    position: relative;
-    top: 240px;
-    margin-left: 345px;
-    color: #539A74;
-    }
-    
-    #Login_button{
+    #next_button{
     width: 350px;
     height: 55px;
     position: relative;
