@@ -22,10 +22,12 @@
 	                <input type="checkbox" id="remember_check_box"> 아이디 저장 
             	</label>
             		<p id="Signup_text"> <a href="./signup_1.jsp"> 회원가입 </a> </p>
-	            	<input type="submit" id="Login_button" value="로그인">
+	            	<input type="submit" id="Login_button" value="로그인" onClick="location.href='./main.jsp'">
 			</div>
 	</div>
 </body>
+
+
 <style>			
 	@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");					
 	

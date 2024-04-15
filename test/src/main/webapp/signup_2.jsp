@@ -27,12 +27,15 @@
 						<option id="gender_option" selected>남</option>
 				        <option id="gender_option"> 여
 					</select>
+					<form>
 					<input type="text" id="introduction" placeholder="소개글">
-					<input type="submit" id="Signup_button" value="회원가입">
+					<input type="button" id="Signup_button" value="회원가입" onClick="location.href='./login.jsp'">
+					</form>
 				</form>
 			</div>
 	</div>
 </body>
+
 
 
 <style>			
