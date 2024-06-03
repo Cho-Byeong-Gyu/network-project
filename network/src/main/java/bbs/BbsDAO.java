@@ -14,11 +14,11 @@ public class BbsDAO {
 	
 	public BbsDAO() {
 		try {
-			String dbURL ="jdbc:mysql://localhost:3306/bbs";
-			String dbID= "root";
-			String dbPassword ="4922677";
-			Class.forName("com.mysql.jdbc.Driver");
-			conn=DriverManager.getConnection(dbURL, dbID, dbPassword);
+			String dbURL = "jdbc:mysql://localhost:3306/bbs";
+			String dbID = "root";
+			String dbPW = "1234";
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn = DriverManager.getConnection(dbURL, dbID, dbPW);
 		} catch (Exception e){
 			e.printStackTrace();	
 		}
@@ -71,7 +71,7 @@ public class BbsDAO {
 	}
 	
 	public ArrayList<Bbs> getList(int pageNumber){
-		String SQL= "SELECT * FROM bbs WHERE bbsID < ? AND bbsAvailable =1 ODER BY bbsID DESC LIMIT 10;";
+		String SQL= "SELECT * FROM BBS WHERE bbsID < ? AND bbsAvailable =1 ORDER BY bbsID DESC LIMIT 10";
 		ArrayList<Bbs> list= new ArrayList<Bbs>();
 		try {
 			PreparedStatement pstmt= conn.prepareStatement(SQL);
@@ -109,10 +109,28 @@ public class BbsDAO {
 		}			
 		return false;
 	}
-
-
 	
-	
+	public Bbs getBbs(int bbsID) {
+		String SQL = "SELECT * FROM BBS WHERE bbsID = ?";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			pstmt.setInt(1,  bbsID);
+			rs=pstmt.executeQuery();
+			if(rs.next()){
+				Bbs bbs = new Bbs();
+				bbs.setBbsID(rs.getInt(1));
+				bbs.setBbsTitle(rs.getString(2));
+				bbs.setUserID(rs.getString(3));
+				bbs.setBbsDate(rs.getString(4));
+				bbs.setBbsContent(rs.getString(5));
+				bbs.setBbsAvailable(rs.getInt(6));
+				return bbs;
+			}
+		}catch(Exception e){
+				e.printStackTrace();
+			}
+		return null;
+	}
 	
 
 }

@@ -11,11 +11,11 @@
 	<div class="container">
 		<div class="header">
 		 	<div class="header__icons">
-		     <form method="post" action="writeAction.jsp">
+		     <form method="post" action="bbs.jsp">
                   <button><img src="./logo.svg" /></button>
 	   		 </form>
         	 <selection class = "header_menu">
-			   <form method="post" action="writeAction.jsp">
+			   <form method="post" action="menuAction.jsp">
 	                 <button class="header_button">팀원 모집 공고</button>
 	                 <span><img src="./line.svg"> </span>
 	                 <button class="header_button">내 팀 들어가기</button>
@@ -27,18 +27,16 @@
 	   </div>
 	   
 	   <div class="article">
-			<section class="board_header">
-	    		<form class="board_header_form" method="post" action="writeAction.jsp">
-				<input type="button" class="back_btn" value=" < " onClick="location.href='./write.jsp'">
-				<input type="label" class= "form-control" placeholder="글 제목" name= "bbsTitle" maxlength= "50">	
-			    <input type= "button" class= "write_btn" value= "작성완료" onClick="location.href='./chat.jsp'">
-	    		</form>
-		    </section>
-		    <section class="board_body">
-	    		<form class="board_body_form" method="post" action="writeAction.jsp">
-				<textarea class= "form-control_2" placeholder="내용을 입력해주세요.." name= "bbsContent" maxlength= "2048"></textarea>
-	    		</form>
-		    </section>
+    		<form class="board_form" method="post" action="writeAction.jsp">
+				<section class="board_header">
+					<input type="button" class="back_btn" value=" < " onClick="location.href='./bbs.jsp'">
+					<input type="text" class= "form-control" placeholder="글 제목" name= "bbsTitle" maxlength= "50">	
+				    <input type= "submit" class= "write_btn" value= "작성완료"> 
+			    </section>
+			    <section class="board_body">
+					<textarea class= "form-control_2" placeholder="내용을 입력해주세요.." name= "bbsContent" maxlength= "2048"></textarea>
+			    </section>
+    		</form>
 		</div>
 	</div>
 
@@ -141,6 +139,8 @@
    		
     }
     
+    
+    
     .board_header {
   	    display: flex;
         position: relative;
@@ -152,7 +152,9 @@
  	  	border: none;
  	  	background: white;
  	  	border-radius: 15px;
+ 	  	margin-top: 30px;
     }
+    
     
     .board_body {
        	margin: 0 auto;
@@ -163,23 +165,18 @@
  	  	background: white;
  	  	border-radius: 15px;
  	  	margin: 0 auto;
- 	  	margin-top: 15px;
+ 	  	margin-top: 20px;
  	}
  	
- 	.board_header_form{
+ 	.board_form{
       	margin: 0 auto;
         position: relative;
     	width: 1080px;
     	height: 120px;
  	    align-items: center;
+ 	    flex-direction: column;
  	}  
-    
- 	.board_body_form{
-       	margin: 0 auto;
-    	width: 1080px;
-    	height: 708px;
-    	margin-top: 15px;
- 	}
+
     
     .back_btn {
     	background: none;   		
@@ -188,8 +185,9 @@
     	font-size: 35px;
     	border: none;
     	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-    	margin: 0 10px 0 20px;
+    	margin: 0 15px 0 30px;
     }
+    
     
     
     .form-control {

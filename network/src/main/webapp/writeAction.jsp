@@ -15,10 +15,14 @@
 </head>
 <body>
 <%
-	String userID= null;
+	String userID= "익명";
 	if(session.getAttribute("userID")!=null){
 		userID=(String)session.getAttribute("userID");
 	}
+	
+	System.out.println(request.getParameter("bbsTitle"));	
+	System.out.println(request.getParameter("bbsContent"));
+	
 	if(bbs.getBbsTitle()==null || bbs.getBbsContent()==null){
 		PrintWriter script = response.getWriter();
 		script.println("<script>");

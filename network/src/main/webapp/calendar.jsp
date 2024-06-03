@@ -237,9 +237,9 @@
 
 	.prevBtn {
 	display: flex;
-	font-size: 40px;
+	font-size: 30px;
 	background: white;
-    margin: 30px auto;
+    margin: 50px 0px 0px 200px;
     color: #539A74; 
 	}
     
@@ -251,11 +251,12 @@
     color: #539A74; 
 	}
 	
+	
 	.nextBtn {
 	display: flex;
-	font-size: 40px;
+	font-size: 30px;
 	background: white;
-    margin: 30px auto;
+    margin: 50px 200px 0px 0px;
     color: #539A74; 
 	}
 

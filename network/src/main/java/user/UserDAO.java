@@ -47,38 +47,5 @@ public class UserDAO {
        return -2;
     }
 
-//public int login(String formID, String formPW) {
-//	 try {
-//			if ("qwer".equals(formID) && "1234".equals(formPW) ) {
-//				return 1;
-//			}else if ("qwer".equals(formID)){
-//				return 0;
-//			}
-//			return -1;
-//	 } catch (Exception e) {
-//           e.printStackTrace();
-//    }	
-//	 return -2;
-//}
-//
-//public boolean login(String formID, String formPW) {
-//    try {
-//    	String SQL = "SELECT ID, PW FROM USER";
-//        PreparedStatement pstmt = conn.prepareStatement(SQL);
-//        rs = pstmt.executeQuery();
-//  
-//        while (rs.next()) {
-//            String dbID = rs.getString("ID");
-//            String dbPW = rs.getString("PW");
-//        	if (formID.equals(dbID) && formPW.equals(dbPW) ) {
-//        		return true;
-//        	}
-//        }
-//        return false;
-//    } catch (Exception e) {
-//        e.printStackTrace();
-//   }		
-//    return false;
-//}
 
 }
