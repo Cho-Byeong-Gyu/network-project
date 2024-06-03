@@ -3226,7 +3226,7 @@
     .btn-default {
       color: #FFF;
       background-color: #539A74;
-      border-color: none;
+
     }
     .btn-default:focus,
     .btn-default.focus {
@@ -6697,7 +6697,6 @@
       visibility: hidden;
     }
     .text-hide {
-      font: 0/0 a;
       color: transparent;
       text-shadow: none;
       background-color: transparent;
@@ -6709,9 +6708,7 @@
     .affix {
       position: fixed;
     }
-    @-ms-viewport {
-      width: device-width;
-    }
+
     .visible-xs,
     .visible-sm,
     .visible-md,
