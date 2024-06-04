@@ -31,7 +31,7 @@ if(request.getParameter("pageNumber")!= null){
 				 <form method="post" action="menuAction.jsp">
 		                 <button class="header_button">팀원 모집 공고</button>
 		                 <span><img src="./line.svg"> </span>
-		                 <button class="header_button">내 팀 들어가기</button>
+		                 <button class="header_button"> 캘린더 </button>
 		                 <span><img src="./line.svg"></span>
 		                 <button class="header_button">내 정보</button>
 			   	 </form>
@@ -76,11 +76,11 @@ if(request.getParameter("pageNumber")!= null){
 			<% 
 		    	if(pageNumber != 1){
 		    %>
-		    <a herf="bbs.jsp?pageNumber=<%= pageNumber -1%>" class="prevBtn">이전 페이지</a>
+		    <a href="bbs.jsp?pageNumber=<%= pageNumber -1%>" class="prevBtn">이전 페이지</a>
 		    <%	
 		    	} if(bbsDAO.nextPage(pageNumber)){
 		    %>
-		    <a herf="bbs.jsp?pageNumber=<%= pageNumber +1%>" class="nextBtn">다음 페이지</a>
+		    <a href="bbs.jsp?pageNumber=<%= pageNumber +1%>" class="nextBtn">다음 페이지</a>
 		    
 		    <%
 		    	}

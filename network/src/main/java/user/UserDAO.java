@@ -46,6 +46,22 @@ public class UserDAO {
        }		
        return -2;
     }
-
-
+    
+    public int signup (User user) {
+    	String SQL = "INSERT INTO USER VAlUES (?, ?, ?, ?, ?, ?)";
+    	try {
+    		pstmt = conn.prepareStatement(SQL);
+    		pstmt.setString(1, user.getID());
+    		pstmt.setString(2, user.getPW());
+    		pstmt.setString(3, user.getname());
+    		pstmt.setString(4, user.getage());
+    		pstmt.setString(5, user.getgender());
+    		pstmt.setString(6, user.getintroduction());
+    		return pstmt.executeUpdate();
+    	} catch(Exception e) {
+    		e.printStackTrace();
+    	}
+    	return -1;
+    }
+    
 }

@@ -4,8 +4,10 @@
 <%@ page import= "java.io.PrintWriter" %>
 <% request.setCharacterEncoding("UTF-8"); %>
 <jsp:useBean id="bbs" class="bbs.Bbs" scope="page" />
+<jsp:useBean id="user" class="user.User" scope="page" />
 <jsp:setProperty name="bbs" property="bbsTitle" />
 <jsp:setProperty name="bbs" property="bbsContent"/>
+<jsp:setProperty name="user" property="ID"/>
 
 <!DOCTYPE html>
 <html>
@@ -16,10 +18,11 @@
 <body>
 <%
 	String userID= "익명";
-	if(session.getAttribute("userID")!=null){
+	if(session.getAttribute("userID")!= "익명"){
 		userID=(String)session.getAttribute("userID");
 	}
 	
+	System.out.println(request.getParameter("userID"));	
 	System.out.println(request.getParameter("bbsTitle"));	
 	System.out.println(request.getParameter("bbsContent"));
 	

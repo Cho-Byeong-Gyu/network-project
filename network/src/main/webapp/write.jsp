@@ -15,10 +15,10 @@
                   <button><img src="./logo.svg" /></button>
 	   		 </form>
         	 <selection class = "header_menu">
-			   <form method="post" action="menuAction.jsp">
+			   <form method="post" action="calendar.jsp">
 	                 <button class="header_button">팀원 모집 공고</button>
 	                 <span><img src="./line.svg"> </span>
-	                 <button class="header_button">내 팀 들어가기</button>
+	                 <button class="header_button">캘린더</button>
 	                 <span><img src="./line.svg"></span>
 	                 <button class="header_button">내 정보</button>
 		   	   </form>

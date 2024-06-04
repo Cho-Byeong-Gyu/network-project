@@ -4,10 +4,10 @@ public class User {
 	
 	private String ID;
 	private String PW;
-	private String Name;
-	private String Age;
-	private String Gender;
-	private String Introduction;
+	private String name;
+	private String age;
+	private String gender;
+	private String introduction;
 
 	public String getID() {				// ID
 		return ID;
@@ -23,31 +23,31 @@ public class User {
 		this.PW = PW;
 	}
 	
-	public String getName() {				// Name
-		return Name;
+	public String getname() {				// Name
+		return name;
 	}
-	public void setName(String Name) {				
-		this.Name = Name;
-	}
-	
-	public String getAge() {				// Age
-		return Age;
-	}
-	public void setAge(String Age) {				
-		this.Age = Age;
+	public void setname(String name) {				
+		this.name = name;
 	}
 	
-	public String getGender() {				// Gender
-		return Gender;
+	public String getage() {				// Age
+		return age;
 	}
-	public void setGender(String Gender) {				
-		this.Gender = Gender;
+	public void setage(String age) {				
+		this.age = age;
 	}
 	
-	public String getIntroduction() {				// introduction
-		return Introduction;
+	public String getgender() {				// Gender
+		return gender;
 	}
-	public void setIntroduction(String Introduction) {				
-		this.Introduction = Introduction;
+	public void setgender(String gender) {				
+		this.gender = gender;
+	}
+	
+	public String getintroduction() {				// introduction
+		return introduction;
+	}
+	public void setIntroduction(String introduction) {				
+		this.introduction = introduction;
 	}
 }

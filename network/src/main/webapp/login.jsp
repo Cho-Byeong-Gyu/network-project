@@ -21,7 +21,7 @@
            		<label id="remember_check">
 	                <input type="checkbox" id="remember_check_box"> 아이디 저장 
             	</label>
-            		<p id="Signup_text"> <a href="./signup_1.jsp"> 회원가입 </a> </p>
+            		<p id="Signup_text"> <a href="./signup.jsp"> 회원가입 </a> </p>
 	            	<input type="submit" id="Login_button" value="로그인">
 				</form>
 			</div>

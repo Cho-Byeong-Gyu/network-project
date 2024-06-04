@@ -21,13 +21,13 @@
 	
 	System.out.println(request.getParameter("ID_Input"));
 	System.out.println(request.getParameter("PW_Input"));
-	
 
 	if (result == 1) {
+		session.setAttribute("userID", user.getID());
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
 		script.println("alert('로그인에 성공하셨습니다.')");
-		script.println("location.href = 'write.jsp'");
+		script.println("location.href = 'bbs.jsp'");
 		script.println("</script>");	
 	} else if (result == 0) {
 		PrintWriter script = response.getWriter();

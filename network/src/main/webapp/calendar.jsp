@@ -51,14 +51,14 @@
 	<div class="container">
 		<div class="header">
 		 	<div class="header__icons">
-		     <form method="post" action="writeAction.jsp">
+		     <form method="post" action="bbs.jsp">
                   <button><img src="./logo.svg" /></button>
 	   		 </form>
         	 <selection class = "header_menu">
-			   <form method="post" action="writeAction.jsp">
+			   <form method="post" action="menuAction.jsp">
 	                 <button class="header_button">팀원 모집 공고</button>
 	                 <span><img src="./line.svg"> </span>
-	                 <button class="header_button">내 팀 들어가기</button>
+	                 <button class="header_button">캘린더</button>
 	                 <span><img src="./line.svg"></span>
 	                 <button class="header_button">내 정보</button>
 		   	   </form>
@@ -236,52 +236,54 @@
  	}  
 
 	.prevBtn {
-	display: flex;
-	font-size: 30px;
-	background: white;
-    margin: 50px 0px 0px 200px;
-    color: #539A74; 
+		display: flex;
+		font-size: 30px;
+		background: white;
+	    margin: 50px 0px 0px 200px;
+	    color: #539A74; 
+	    border-radius: 15px;
 	}
     
 	.monthBtn {
-	display: flex;
-	font-size: 40px;
-	background: white;
-    margin: 30px auto;
-    color: #539A74; 
+		display: flex;
+		font-size: 40px;
+		background: white;
+	    margin: 30px auto;
+	    color: #539A74; 
+	   	border-radius: 15px;
 	}
 	
 	
 	.nextBtn {
-	display: flex;
-	font-size: 30px;
-	background: white;
-    margin: 50px 200px 0px 0px;
-    color: #539A74; 
+		display: flex;
+		font-size: 30px;
+		background: white;
+	    margin: 50px 200px 0px 0px;
+	    color: #539A74; 
 	}
 
      table { 
-     width: 85%;
-     height: 80%;
-     margin: 0 auto;
-     background: white;
-     table-layout: fixed;
-     border-spacing: 10px 5px;
+	     width: 85%;
+	     height: 80%;
+	     margin: 0 auto;
+	     background: white;
+	     table-layout: fixed;
+	     border-spacing: 10px 5px;
      }
      
      th, td {
-     outline: 1px solid #539A74; 
-     padding: 8px;
-     text-align: center;
-     border-radius: 8px;
-     padding: 1px;
-     background: white;
+	     outline: 1px solid #539A74; 
+	     padding: 8px;
+	     text-align: center;
+	     border-radius: 8px;
+	     padding: 1px;
+	     background: white;
      }
      
      
      th { 
-     background: #9BC8B5;
-     color: white; 
+	     background: #9BC8B5;
+	     color: white; 
      }
     
 </style>
