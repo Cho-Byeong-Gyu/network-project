@@ -8,6 +8,69 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>chat</title>
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="../bootstrap.js"></script>
+        <script type="text/javascript">
+            function submitFunction() {
+                var chatName = $('#chatName').val();
+                var chatContent = $('#chatContent').val();
+                $.ajax({
+                    type: "POST",
+                    url: "./chatSubmitServlet",
+                    data: {
+                        chatName: chatName,
+                        chatContent: chatContent
+                    },
+                    success: function(result){
+                        if(result==1){
+                            alert('전송에 성공했습니다');
+                        }else if(result==0){
+                            alert('이름과 내용을 정확히 입력하세요.');
+                        }else {
+                            alert('데이터베이스 오류가 발생했습니다.');
+                        }
+                    }
+                });
+                $('#chatContent').val('');
+            }
+            function chatListFunction(type) {
+                $.ajax({
+                    type: "POST",
+                    url: "./chatListServlet",
+                    data: {
+                        listType: type,
+                    },
+                    success: function(data){
+                        var parsed = JSON.parse(data);
+                        var result = parsed.result;
+                        for(var i = 0; i < result.length; i++){
+                            addChat(result[i][0].value, result[i][1].value, result[i][2].value);
+                        }
+                    }
+                });
+                $('#chatContent').val('');
+            }
+            function addChat(chatName, chatContent, chatTime) {
+                $('#chatList').append('<div class="row">' +
+                    '<div class="media">' +
+                    '<a class="pull-left" href="#">' +
+                    '<img class="media-object img-circle" src="http://placehold.co/40">' +
+                    '</a>' +
+                    '< class="media-body">' +
+                    '<h4 class="media-heading">' +
+                    chatName +
+                    '<span class="small-pull-right">' +
+                    chatTime +
+                    '</span>' +
+                    '</h4>' +
+                    '<p>' +
+                    chatContent +
+                    '</p>' +
+                    '</div>' +
+                    '</div>' +
+                    '</hr>'
+                );
+            }
+        </script>
     </head>
     <body>
         <div class="container">
@@ -23,41 +86,15 @@
             </section>
             <div class="chat">
                 <section class="article">
-                    <div class="chat-widget" style="overflow-y: auto; width: 826px;">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <p class="text-center text-muted small">2017년 5월 30일</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="media">
-                                <a class="pull-left" href="#">
-                                    <img class="media-object img-circle" src="http://placehold.co/40">
-                                </a>
-                                <div class="media-body">
-                                    <h4 class="media-heading">정연우
-                                        <span class="small-pull-right">오전 12:23</span>
-                                    </h4>
-                                </div>
-                                <p>안녕하세요. 정연우입니다.</p>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="row">
-                            <div class="media">
-                                <a class="pull-left" href="#">
-                                    <img class="media-object img-circle" src="http://placehold.co/40">
-                                </a>
-                                <div class="media-body">
-                                    <h4 class="media-heading">여누누
-                                        <span class="small-pull-right">오전 12:23</span>
-                                    </h4>
-                                </div>
-                                <p>네안냐뗴여</p>
-                            </div>
-                        </div>
+                    <div id="chatList" class="chat-widget" style="overflow-y: auto; width: 826px;">
+
                     </div>
                     <div class="portlet-footer">
+                        <div class="row">
+                            <div class="form-group col-xs-4">
+                                <input style="height: 40px;" type="text" id="chatName" class="form-control" placeholder="이름" maxlength="20">
+                            </div>
+                        </div>
                         <div class="row" STYLE="height: 90px;">
                             <div class="form-group col-xs-10">
                                 <textarea style="height: 80px;" id="chatContent" class="form-control" placeholder="메세지를 입력하세요.." maxlength="100">  
@@ -178,15 +215,9 @@
             height: 50px;
             border-radius: 100%;
         }
-        
-    
-    
-    
-    
-    
-    
-    
-    
+        .portlet-footer{
+          background-color: #FFFFFF;
+        }
     .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
       position: relative;
       min-height: 1px;
