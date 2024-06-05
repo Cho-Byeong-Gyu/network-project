@@ -53,11 +53,17 @@
 	a{
 	 text-decoration-line: none;
 	 color: inherit;
+	 background-color: white;
+	}
+	
+	form {
+		background-color: white;
 	}
 
 	*{
 		margin: 0;
 		padding: 0 0 0 0;
+		background-color: #F3F3F3;
 	}
 	
 
@@ -85,6 +91,7 @@
 		text-align: center;
 		position: relative;
 	    top: 45px;
+   		background-color: white;
 	    font-weight: bold;
 	    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 	}																		
@@ -103,6 +110,7 @@
 	    padding: 0 0 0 10px;
 	    font-size: 30px;
 		font-family: "Pretendard Variable";
+		background-color: white;
 	}
 	
 	#ID_Input::placeholder{
@@ -127,6 +135,7 @@
 	    padding: 0 0 0 10px;
 	    font-size: 30px;
 		font-family: "Pretendard Variable";
+				background-color: white;
 	}
 	
 	#PW_Input::placeholder{
@@ -151,6 +160,7 @@
 	    padding: 0 0 0 10px;
 	    font-size: 30px;
 		font-family: "Pretendard Variable";
+		background-color: white;
 	}
 	
 	#name_Input::placeholder{
@@ -177,6 +187,7 @@
     color: #539A74;
     font-size: 30px;
 	font-family: "Pretendard Variable";
+	background-color: white;
 	}
 	
 	#age_option{
@@ -201,6 +212,7 @@
     color: #539A74;
     font-size: 30px;
 	font-family: "Pretendard Variable";
+	background-color: white;
 	}
 	
 	#gender_option{
@@ -222,7 +234,7 @@
     padding: 0 0 0 10px;
     font-size: 30px;
 	font-family: "Pretendard Variable";
-	
+	background-color: white;
 	}
 	
 	#introduction::placeholder{
