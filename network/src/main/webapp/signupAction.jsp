@@ -7,8 +7,8 @@
 <jsp:setProperty name="user" property="ID" param="ID_Input"/>
 <jsp:setProperty name="user" property="PW" param="PW_Input"/>
 <jsp:setProperty name="user" property="name" param="name_Input"/>
-<jsp:setProperty name="user" property="age" param="age_option"/>
-<jsp:setProperty name="user" property="gender" param="gender_option"/>
+<jsp:setProperty name="user" property="age" />
+<jsp:setProperty name="user" property="gender" />
 <jsp:setProperty name="user" property="introduction" param="introduction"/>
 
 <!DOCTYPE html>
