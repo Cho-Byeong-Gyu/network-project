@@ -66,7 +66,7 @@ if(request.getParameter("pageNumber")!= null){
 					<td><%= list.get(i).getBbsTitle() %></td>
 					<td><%= list.get(i).getUserID() %></td>
 					<td><%= list.get(i).getBbsDate().substring(0, 11) + list.get(i).getBbsDate().substring(11, 13) + "시" + list.get(i).getBbsDate().substring(14, 16) + "분" %></td>					
-				    <td><input class="chatBtn" type="button"  value="입장하기" onClick="location.href='./chat.jsp'"></td>
+				   <td><input class="chatBtn" type="button"  value="입장하기" onClick="location.href='./view.jsp?bbsID=<%= list.get(i).getBbsID()%>'"></td>
 				</tr>
 				<%
 					}

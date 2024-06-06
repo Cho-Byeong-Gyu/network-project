@@ -15,9 +15,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
+
 <body>
 <%
-	String userID= "익명";
+	String userID= user.getID();
+
 	if(session.getAttribute("userID")!= "익명"){
 		userID=(String)session.getAttribute("userID");
 	}

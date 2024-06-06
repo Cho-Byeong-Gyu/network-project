@@ -128,6 +128,27 @@
    		margin: 0 auto;
         display: relative;
 	}
+
+    .article{
+    	display: flex;
+        position: relative;
+        width: 826px;
+        height: 828px;
+        border-radius: 15px;
+        opacity: 0px;
+        background: #FFFFFF;
+   		padding: 0px 10px 20px 0px;
+   		align-items:flex-end;
+    }
+	    
+    .friends{
+        position: relative;
+        display: flex;
+        width: 200px;
+        height: 828px;
+        border-radius: 15px;
+        background: #FFFFFF;
+    }
 	
 	form {
 		display:flex;
@@ -135,11 +156,6 @@
 		width: 480px;
 		gap: 16px;
   	}
-	
-	body{
-		outline: 1px;
-	}
-
 	
     button {
         background: white;
@@ -196,18 +212,7 @@
         width: 100%;
         padding: 148px 0px 0px 180px;
     }
-    .article{
-    	display: flex;
-        position: relative;
-        width: 826px;
-        height: 828px;
-        border-radius: 15px;
-        opacity: 0px;
-        background: #FFFFFF;
-   		padding: 0px 0px 20px 0px;
-   		align-items:flex-end;
-    }
-    
+
     .input_div{
         margin: 0 auto;
     	 display: flex;
@@ -250,16 +255,7 @@
         color: white;
     }
 
-    
-    
-    .friends{
-        position: relative;
-        display: flex;
-        width: 200px;
-        height: 828px;
-        border-radius: 15px;
-        background: #FFFFFF;
-    }
+   
     ul {
  	    border-radius: 15px;
     	width: 100%;
