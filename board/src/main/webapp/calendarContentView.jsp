@@ -30,7 +30,7 @@
                 <form method="post" action="calendarDelete.jsp">
                     <input type="hidden" name="schedule_Date" value="<%= Fdate %>">
                     <input type="hidden" name="schedule_Content" value="<%= content %>">
-                    <button type="submit" name="delete">삭제</button>
+                    <button type="submit" id="delete_Btn" name="delete">삭제</button>
                 </form>
             </td>
         </tr>
@@ -45,11 +45,11 @@
 	}
 	
      table { 
-	     width: 65%;
+	     width: 80%;
 	     margin: 0 auto;
 	     background: white;
 	     table-layout: fixed;
-	     border-spacing: 8px;
+	     border-spacing: 12px;
      }
      
      tr {
@@ -57,11 +57,14 @@
 	     text-align: center;
 	     border-radius: 8px;
 	     background: white;
-	     word-wrap: break-word;
+         margin-top: 10px;
+         width: 240px;
      }
      
      td {
      	color:	#539A74;
+    	height: 28px;
+    	padding: 1px;
      }
      
     h2	{
@@ -71,5 +74,17 @@
    	     text-align: center;
      }
      
+     #delete_Btn {
+     	 float: right;
+     	 margin: 0px, 30px, 0px, 30px;
+     	 background: #9BC8B5;
+	     border-radius: 8px;
+	     border: 1px solid #9BC8B5;
+	     vertical-align: middle;
+		 color: white;
+		 font-size: 12px;
+		 height: 25px;
+     	 width: 50px;
+     }
 </style>
 </html>
