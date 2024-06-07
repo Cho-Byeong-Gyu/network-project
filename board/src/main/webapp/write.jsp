@@ -14,15 +14,19 @@
 		     <form method="post" action="bbs.jsp">
                   <button><img src="./logo.svg" /></button>
 	   		 </form>
-        	 <selection class = "header_menu">
-			   <form method="post" action="calendar.jsp">
+	       	 <selection class = "header_menu">
+			    <form class="bbs_form" method="post" action="bbs.jsp">
 	                 <button class="header_button">팀원 모집 공고</button>
+		   	    </form>
 	                 <span><img src="./line.svg"> </span>
+			    <form class="calendar_form" method="post" action="calendar.jsp">
 	                 <button class="header_button">캘린더</button>
+		   	    </form>
 	                 <span><img src="./line.svg"></span>
+			    <form class="myInfo_form" method="post" action="myInfo.jsp">
 	                 <button class="header_button">내 정보</button>
-		   	   </form>
-       	      </selection>
+		   	    </form>
+	      	  </selection>
 	        </div>
 	   </div>
 	   
@@ -47,9 +51,17 @@
 <style>			
 	@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");					
 	
+	html, body {
+	    margin: 0;
+	    padding: 0;
+        height: 100%;
+   		width: 100%; 
+	}
+	
 	a{
-	 text-decoration-line: none;
-	 color: inherit;
+		 text-decoration-line: none;
+		 color: inherit;
+		 background-color: white;
 	}
 
 	*{
@@ -57,44 +69,8 @@
 		padding: 0 0 0 0;
 		background-color: #F3F3F3;
 	}
-	
-	.container {
-		background-color: #F3F3F3;
-		z-index: -1;
-		width: 1440px;
-		height: 1024px;
-		margin: auto;
-	}
 
-	form {
-	display:flex;
-  	background: none;
-	width: 480px;
-	gap: 16px;
-  	}
-	
-	body {
-	outline: 1px;
-	}
-
-	
-    button {
-        background: white;
-        color: inherit;
-        border: none;
-        padding: 0;
-        font: inherit;
-        cursor: pointer;
-        outline: inherit;
-    }	
-    
-    img {
-        background: white;
-    }
-	
     .header	{
-    
-        position: absolute;
         display: flex;
         padding: 0px 180px;
         box-sizing: border-box;
@@ -125,8 +101,64 @@
         display:flex;
         align-items: center;
         background: white;
-        gap: 16px;
+        gap: 10px;
+        color: #4B8D6A;	
     }
+
+	.logo_form {
+		display:flex;
+	  	background: none;
+		width: 480px;
+		gap: 16px;
+  	}
+
+	.bbs_form {
+		display:flex;
+	  	background: none;
+		width: 165px;
+	}
+
+	.calendar_form {
+		display:flex;
+	  	background: none;
+		width: 72px;
+	}
+
+	.myInfo_form {
+		display:flex;
+	  	background: none;
+		width: 90px;
+	}
+	
+    button {
+        background: white;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+    }	
+    
+    img {
+        background: white;
+    }
+
+ 	
+ 	input:focus {
+ 		outline: none;
+ 	}
+ 	
+	
+	
+	.container {
+		background-color: #F3F3F3;
+		z-index: -1;
+		width: 1440px;
+		height: 1024px;
+		margin: auto;
+	}
+	
     .article {
         position: relative;
         width: 1080px;
@@ -135,17 +167,14 @@
         background: white;
    		margin: 0 auto;
    		vertical-align: middle;
-   		top: 148px;
-   		
+   		top: 58px;
     }
-    
-    
     
     .board_header {
   	    display: flex;
         position: relative;
     	width: 1080px;
-    	height: 120px;
+    	height: 130px;
  	  	text-align: center; 
 	    align-items: center;   	    
     	margin: 0 auto;
@@ -154,7 +183,6 @@
  	  	border-radius: 15px;
  	  	margin-top: 30px;
     }
-    
     
     .board_body {
        	margin: 0 auto;
@@ -229,10 +257,15 @@
     	font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
   		color: #1C3427;
   		margin: 0 auto;
+		resize: none;
     }
 	
 	textarea { 
-    padding: 12px 18px 12px 18px; 
+    	padding: 12px 18px 12px 18px; 
     }
+    
+    input:-webkit-autofill {
+    	-webkit-box-shadow: 0 0 0 500px none inset !important;
+  }
     
 </style>
