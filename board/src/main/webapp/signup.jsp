@@ -120,10 +120,11 @@
 		position: relative;
 	    top: 100px;
 	    margin-left: 85px;
-	    padding: 0 0 0 10px;
-	    font-size: 30px;
+	    padding: 0 0 0 20px;
+	    font-size: 24px;
 		font-family: "Pretendard Variable";
 		background-color: white;
+		color: #539A74;
 	}
 	
 	#ID_Input::placeholder{
@@ -132,7 +133,6 @@
 		font-size: 24px;
 		color: #539A74;
 		text-align: left;
-		padding: 10px;
 	}
 
 	#PW_Input {
@@ -145,10 +145,11 @@
 		position: relative;
 	    top: 135px;
 	    margin-left: 85px;
-	    padding: 0 0 0 10px;
-	    font-size: 30px;
+	    padding: 0 0 0 20px;
+	    font-size: 24px;
 		font-family: "Pretendard Variable";
-				background-color: white;
+		background-color: white;
+		color: #539A74;
 	}
 	
 	#PW_Input::placeholder{
@@ -157,7 +158,6 @@
 		font-size: 24px;
 		color: #539A74;
 		text-align: left;
-		padding: 10px;
 	}
 	
 	#name_Input {
@@ -170,10 +170,11 @@
 		position: relative;
 	    top: 170px;
 	    margin-left: 85px;
-	    padding: 0 0 0 10px;
-	    font-size: 30px;
+	    padding: 0 0 0 20px;
+	    font-size: 24px;
 		font-family: "Pretendard Variable";
 		background-color: white;
+		color: #539A74;
 	}
 	
 	#name_Input::placeholder{
@@ -182,7 +183,6 @@
 		font-size: 24px;
 		color: #539A74;
 		text-align: left;
-		padding: 10px;
 	}
 	
 	#age{
