@@ -167,7 +167,7 @@
         background: white;
    		margin: 0 auto;
    		vertical-align: middle;
-   		top: 58px;
+   		top: 18px;
     }
     
     .board_header {
