@@ -20,6 +20,11 @@
             	<input type="text" id="name_Input" name="name_Input" placeholder="이름" maxlength="20">
 				<select id="age" name="age">
 					<option id="age_option" selected>나이</option>
+			        <option id="age_option"> 14
+			        <option id="age_option"> 15
+			        <option id="age_option"> 16
+			        <option id="age_option"> 17
+			        <option id="age_option"> 18
 			        <option id="age_option"> 19
 			        <option id="age_option"> 20
 			        <option id="age_option"> 21
@@ -32,10 +37,20 @@
 			        <option id="age_option"> 28
 			        <option id="age_option"> 29
 			        <option id="age_option"> 30
+			        <option id="age_option"> 31
+			        <option id="age_option"> 32
+			        <option id="age_option"> 33
+			        <option id="age_option"> 34
+			        <option id="age_option"> 35
+			        <option id="age_option"> 36
+			        <option id="age_option"> 37
+			        <option id="age_option"> 38
+			        <option id="age_option"> 39
+			        <option id="age_option"> 40
 				</select>
 				<select id="gender" name="gender">
-					<option id="gender_option" selected>남</option>
-			        <option id="gender_option"> 여
+					<option id="gender_option" selected>남자</option>
+			        <option id="gender_option"> 여자
 				</select>
 				<textarea id="introduction" name="introduction" maxlength="200" placeholder="소개글" ></textarea>
 				<input type="submit" id="Signup_button" value="회원가입">
@@ -99,8 +114,8 @@
 		width: 320px;
 		height: 40px;
 		border-radius: 50px;		
-		outline: 1px;
-		border-color: #539A74;
+		outline: none;
+		border: 2px solid #539A74;
 		margin: auto;
 		position: relative;
 	    top: 100px;
@@ -124,8 +139,8 @@
 		width: 320px;
 		height: 40px;
 		border-radius: 50px;		
-		outline: 1px;
-		border-color: #539A74;
+		outline: none;
+		border: 2px solid #539A74;
 		margin: auto;
 		position: relative;
 	    top: 135px;
@@ -149,8 +164,8 @@
 		width: 320px;
 		height: 40px;
 		border-radius: 50px;		
-		outline: 1px;
-		border-color: #539A74;
+		outline: none;
+		border: 2px solid #539A74;
 		margin: auto;
 		position: relative;
 	    top: 170px;
@@ -175,15 +190,15 @@
 		width: 145px;
 		height: 40px;
 		border-radius: 50px;		
-		outline: 1px;
-		border-color: #539A74;
+		outline: none;
+		border: 2px solid #539A74;
 		margin: auto;
 		position: relative;
 	    top: 195px;
 	    margin-left: 90px;
 	    padding: 0 0 0 10px;
 	    color: #539A74;
-	    font-size: 30px;
+	    font-size: 24px;
 		font-family: "Pretendard Variable";
 		background-color: white;
 	}
@@ -200,15 +215,15 @@
 		width: 145px;
 		height: 40px;
 		border-radius: 50px;		
-		outline: 1px;
-		border-color: #539A74;
+		outline: none;
+		border: 2px solid #539A74;
 		margin: auto;
 		position: relative;
 	    top: 195px;
 	    margin-left: 30px;
 	    padding: 0 0 0 10px;
 	    color: #539A74;
-	    font-size: 30px;
+	    font-size: 24px;
 		font-family: "Pretendard Variable";
 		background-color: white;
 	}
