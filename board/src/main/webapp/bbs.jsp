@@ -21,24 +21,27 @@ if(request.getParameter("pageNumber")!= null){
 }
 %>
 
-	<div class="container">
-		<div class="header">
-		 	<div class="header__icons">
-		     <form method="post" action="bbs.jsp">
-                  <button><img src="./logo.svg" /></button>
+<div class="container">
+	<div class="header">
+	 	<div class="header__icons">
+		     <form class="logo_form" method="post" action="bbs.jsp">
+	                 <button><img src="./logo.svg" /></button>
 	   		 </form>
-        	 <selection class = "header_menu">
-				 <form method="post" action="menuAction.jsp">
-		                 <button class="header_button">팀원 모집 공고</button>
-		                 <span><img src="./line.svg"> </span>
-		                 <button class="header_button">내 팀 들어가기</button>
-		                 <span><img src="./line.svg"></span>
-		                 <button class="header_button">내 정보</button>
-			   	 </form>
-       	     </selection>
+	       	 <selection class = "header_menu">
+			    <form class="bbs_form" method="post" action="bbs.jsp">
+	                 <button class="header_button">팀원 모집 공고</button>
+		   	    </form>
+	                 <span><img src="./line.svg"> </span>
+			    <form class="calendar_form" method="post" action="calendar.jsp">
+	                 <button class="header_button">캘린더</button>
+		   	    </form>
+	                 <span><img src="./line.svg"></span>
+			    <form class="myInfo_form" method="post" action="myInfo.jsp">
+	                 <button class="header_button">내 정보</button>
+		   	    </form>
+	      	  </selection>
         </div>
-   </div>
-	   
+    </div>
 	<div class="container">
 		<div class="article">
 			<section class="board_header">
@@ -66,7 +69,7 @@ if(request.getParameter("pageNumber")!= null){
 					<td><%= list.get(i).getBbsTitle() %></td>
 					<td><%= list.get(i).getUserID() %></td>
 					<td><%= list.get(i).getBbsDate().substring(0, 11) + list.get(i).getBbsDate().substring(11, 13) + "시" + list.get(i).getBbsDate().substring(14, 16) + "분" %></td>					
-				    <td><input class="chatBtn" type="button"  value="입장하기" onClick="location.href='./view.jsp?bbsID=<%= list.get(i).getBbsID()%>'"></td>
+				   <td><input class="chatBtn" type="button"  value="입장하기" onClick="location.href='./view.jsp?bbsID=<%= list.get(i).getBbsID()%>'"></td>
 				</tr>
 				<%
 					}
@@ -93,11 +96,12 @@ if(request.getParameter("pageNumber")!= null){
 
 
 <style>			
-	@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");					
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");					
 	
 	a{
-	 text-decoration-line: none;
-	 color: inherit;
+		 text-decoration-line: none;
+		 color: inherit;
+		 background-color: none;
 	}
 
 	*{
@@ -106,6 +110,86 @@ if(request.getParameter("pageNumber")!= null){
 		background-color: #F3F3F3;
 	}
 	
+   button {
+        background: white;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+    }	
+    
+    img {
+        background: white;
+    }
+	
+    .header	{
+    
+        position: absolute;
+        display: flex;
+        padding: 0px 180px;
+        box-sizing: border-box;
+        background: #FFFFFF;
+        border: 3px solid  #F3F3F3;
+        border-radius: 10px;		
+        width: 1440px;
+	    height: 100px;
+	    margin: 0 auto;
+    }	
+    
+    .header_button{
+        display: flex;
+        font-family: Pretendard;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 28.64px;
+        text-align: left;
+    }
+    .header__icons{
+        display: flex;
+        background: white;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .header_menu{
+        display:flex;
+        align-items: center;
+        background: white;
+        gap: 10px;
+        color: #4B8D6A;	
+    }
+  
+	.logo_form {
+		display:flex;
+	  	background: none;
+		width: 480px;
+		gap: 16px;
+  	}
+
+	.bbs_form {
+		display:flex;
+	  	background: none;
+		width: 165px;
+	}
+
+	.calendar_form {
+		display:flex;
+	  	background: none;
+		width: 72px;
+	}
+
+	.myInfo_form {
+		display:flex;
+	  	background: none;
+		width: 90px;
+	}
+	
+	
+	
+
+
 	.container {
 		background-color: #F3F3F3;
 		z-index: -1;
@@ -113,19 +197,7 @@ if(request.getParameter("pageNumber")!= null){
 		height: 1024px;
 		margin: auto;
 	}
-
-	form {
-		display:flex;
-	  	background: none;
-		width: 480px;
-		gap: 16px;
-  	}
 	
-	body {
-		outline: 1px;
-	}
-
-
 	h2{
 		color: #046B40;
 		font-size: 30px;
@@ -168,21 +240,6 @@ if(request.getParameter("pageNumber")!= null){
 	    border-radius: 8px;
 	}
 	
-	
-    button {
-        background: white;
-        color: inherit;
-        border: none;
-        padding: 0;
-        font: inherit;
-        cursor: pointer;
-        outline: inherit;
-    }	
-    
-    img {
-        background: white;
-    }
-	
 	caption {
         background: none;
 	}
@@ -209,41 +266,6 @@ if(request.getParameter("pageNumber")!= null){
 	    vertical-align: middle;
 	    border-radius: 10px;
 	}
-	
-    .header	{
-        position: absolute;
-        display: flex;
-        padding: 0px 180px;
-        box-sizing: border-box;
-        background: #FFFFFF;
-        border: 3px solid  #F3F3F3;
-        border-radius: 10px;		
-        width: 1440px;
-	    height: 100px;
-	    margin: 0 auto;
-    }	
-    
-    .header_button{
-        display: flex;
-        font-family: Pretendard;
-        font-size: 24px;
-        font-weight: 500;
-        line-height: 28.64px;
-        text-align: left;
-    }
-    .header__icons{
-        display: flex;
-        background: white;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-    }
-    .header_menu{
-        display:flex;
-        align-items: center;
-        background: white;
-        gap: 16px;
-    }
    
     .board_header {
 	    display: flex;
@@ -288,3 +310,4 @@ if(request.getParameter("pageNumber")!= null){
 	}	   	
 
 }
+
