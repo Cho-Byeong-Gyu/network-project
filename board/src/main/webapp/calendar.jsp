@@ -60,11 +60,15 @@
 	                 <button><img src="./logo.svg" /></button>
 	   		 </form>
 	       	 <selection class = "header_menu">
-			    <form class="menu_form" method="post" action="menuAction.jsp">
+			    <form class="bbs_form" method="post" action="bbs.jsp">
 	                 <button class="header_button">팀원 모집 공고</button>
+		   	    </form>
 	                 <span><img src="./line.svg"> </span>
+			    <form class="calendar_form" method="post" action="calendar.jsp">
 	                 <button class="header_button">캘린더</button>
+		   	    </form>
 	                 <span><img src="./line.svg"></span>
+			    <form class="myInfo_form" method="post" action="myInfo.jsp">
 	                 <button class="header_button">내 정보</button>
 		   	    </form>
 	      	  </selection>
@@ -96,7 +100,7 @@
 			        if (count % 7 == 0) out.print("<tr>");
 			        if (day == currentDay && month == today.get(Calendar.MONTH) && year == today.get(Calendar.YEAR)) {
 			            int result = calendar2.schedule_Write(year, month+1, day);
-		          
+		            	System.out.println(result);
 		     			if(result >=1 ){
 		     			%>	<td class='today' style="color: #285E47;"><a href="javascript:Fdetail('<%= Fdate%>')"> <%= day %> </a></td>
 		     			<% } else {
@@ -104,7 +108,7 @@
 	   				<% }
 			        } else {
 			            int result = calendar2.schedule_Write(year, month+1, day);
-		         
+		            	System.out.println(result);
 		     			if(result >=1 ){
 		     			%>	<td style="color: #285E47"><a href="javascript:Fdetail('<%= Fdate%>')"> <%= day %> </a></td>
 		     			<% } else {
@@ -146,7 +150,8 @@
 
 
 <style>			
-	@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");					
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");					
 	
 	a{
 		 text-decoration-line: none;
@@ -160,6 +165,86 @@
 		background-color: #F3F3F3;
 	}
 	
+   button {
+        background: white;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+    }	
+    
+    img {
+        background: white;
+    }
+	
+    .header	{
+    
+        position: absolute;
+        display: flex;
+        padding: 0px 180px;
+        box-sizing: border-box;
+        background: #FFFFFF;
+        border: 3px solid  #F3F3F3;
+        border-radius: 10px;		
+        width: 1440px;
+	    height: 100px;
+	    margin: 0 auto;
+    }	
+    
+    .header_button{
+        display: flex;
+        font-family: Pretendard;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 28.64px;
+        text-align: left;
+    }
+    .header__icons{
+        display: flex;
+        background: white;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .header_menu{
+        display:flex;
+        align-items: center;
+        background: white;
+        gap: 10px;
+        color: #4B8D6A;	
+    }
+  
+	.logo_form {
+		display:flex;
+	  	background: none;
+		width: 480px;
+		gap: 16px;
+  	}
+
+	.bbs_form {
+		display:flex;
+	  	background: none;
+		width: 165px;
+	}
+
+	.calendar_form {
+		display:flex;
+	  	background: none;
+		width: 72px;
+	}
+
+	.myInfo_form {
+		display:flex;
+	  	background: none;
+		width: 90px;
+	}
+	
+
+
+
+	
 	.container {
 		background-color: #F3F3F3;
 		z-index: -1;
@@ -167,7 +252,6 @@
 		height: 1024px;
 		margin: auto;
 	}
-	
 	
 	.aside {
 	    position: relative;
@@ -178,7 +262,7 @@
    		margin: 15% 3% 0% 0%;
    		vertical-align: middle;
 	    text-align: center;
-   		top: 18px;
+   		top: 140px;
    		float: right;
 	}
 
@@ -192,49 +276,8 @@
         background: white;
 	    margin: 2% 0% 0 3%;
    		vertical-align: middle;
-   		top: 18px;
+   		top: 140px;
     }
-    
-
-	.logo_form {
-	display:flex;
-  	background: none;
-	width: 480px;
-	gap: 16px;
-  	}
-
-	.menu_form {
-		display:flex;
-	  	background: none;
-		width: 400px;
-		gap: 16px;
-	}
-	
-	.schedule_form {
-    	margin: 0 auto;
-   		vertical-align: middle;
-	    text-align: center;
-		width: 300px;
-	  	background: none;
-	}
-	
-    button {
-        background: white;
-        color: inherit;
-        border: none;
-        padding: 0;
-        font: inherit;
-        cursor: pointer;
-        outline: inherit;
-    }	
-    
-    img {
-        background: white;
-    }
- 	
- 	input:focus {
- 	outline: none;
- 	}
     
     .schedule_Input {
    		vertical-align: middle;
