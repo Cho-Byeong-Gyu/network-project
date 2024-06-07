@@ -74,8 +74,8 @@
 			</tbody>					
 		    </table>
 			<form class="edit_form">
-	 			<input type="button" class= "edit_btn" value="수정" onClick="location.href= "./update.jsp?bbsID=<%= bbsID %>">
-	 			<input type="button" class= "delete_btn" value="삭제" onClick="location.href="./deleteAction.jsp?bbsID=<%= bbsID %>">
+	 			<input type="button" class= "edit_btn" value="수정" onClick="location.href='./update.jsp?bbsID=<%= bbsID %>'">
+	 			<input type="button" class= "delete_btn" value="삭제" onClick="location.href='./deleteAction.jsp?bbsID=<%= bbsID %>'">
 			</form>
 		</div>
 	</div>
