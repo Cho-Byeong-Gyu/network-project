@@ -44,41 +44,41 @@
 	                 <button class="header_button">캘린더</button>
 		   	    </form>
 	                 <span><img src="./line.svg"></span>
-			    <form class="menuAction_form" method="post" action="menuAction.jsp">
+			    <form class="myInfo_form" method="post" action="myInfo.jsp">
 	                 <button class="header_button">내 정보</button>
 		   	    </form>
 	      	  </selection>
         </div>
     </div>
-		<div class="article">
-				<form class="title_form">
-		 			<input type="button" class="back_btn" value=" < " onClick="location.href='./bbs.jsp'">
-		 			<input type="text" class="bbsTitle" value="<%=bbs.getBbsTitle() %>" disabled>
-		 			<input type="button" class="chat_btn" value="채팅방 입장" onClick="location.href='./chat.jsp'">
-				</form>
-			<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
-			<tbody>
-				<tr class="name">
-					<td class="name_td">작성자</td>
-					<td colspan="2"><%=bbs.getUserID() %></td>
-				</tr>
-				<tr class="date">
-					<td class="date_td">작성일자</td>
-					<td colspan="2"><%= bbs.getBbsDate().substring(0, 11) + bbs.getBbsDate().substring(11, 13) + "시" + bbs.getBbsDate().substring(14, 16) + "분" %>
-					</td>
-				</tr>
-				<tr class="content">
-					<td class="content_td">내용</td>
-					<td class="textArea" colspan="2""><%=bbs.getBbsContent() %> <span class="ku"><img src="./ku.svg" /></span> </td>
-				</tr>				
-			</tbody>					
-		    </table>
-			<form class="edit_form">
-	 			<input type="button" class= "edit_btn" value="수정" onClick="location.href='./update.jsp?bbsID=<%= bbsID %>'">
-	 			<input type="button" class= "delete_btn" value="삭제" onClick="location.href='./deleteAction.jsp?bbsID=<%= bbsID %>'">
+	<div class="article">
+			<form class="title_form">
+	 			<input type="button" class="back_btn" value=" < " onClick="location.href='./bbs.jsp'">
+	 			<input type="text" class="bbsTitle" value="<%=bbs.getBbsTitle() %>" disabled>
+	 			<input type="button" class="chat_btn" value="채팅방 입장" onClick="location.href='./chat.jsp?bbsID=<%= bbsID %>'">
 			</form>
-		</div>
+		<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
+		<tbody>
+			<tr class="name">
+				<td class="name_td">작성자</td>
+				<td colspan="2"><%=bbs.getUserID() %></td>
+			</tr>
+			<tr class="date">
+				<td class="date_td">작성일자</td>
+				<td colspan="2"><%= bbs.getBbsDate().substring(0, 11) + bbs.getBbsDate().substring(11, 13) + "시" + bbs.getBbsDate().substring(14, 16) + "분" %>
+				</td>
+			</tr>
+			<tr class="content">
+				<td class="content_td">내용</td>
+				<td class="textArea" colspan="2""><%=bbs.getBbsContent() %> <span class="ku"><img src="./ku.svg" /></span> </td>
+			</tr>				
+		</tbody>					
+	    </table>
+		<form class="edit_form">
+ 			<input type="button" class= "edit_btn" value="수정" onClick="location.href='./update.jsp?bbsID=<%= bbsID %>'">
+ 			<input type="button" class= "delete_btn" value="삭제" onClick="location.href='./deleteAction.jsp?bbsID=<%= bbsID %>'">
+		</form>
 	</div>
+</div>
 </body>
 
 <style>			
@@ -95,15 +95,7 @@
 		padding: 0 0 0 0;
 		background-color: #F3F3F3;
 	}
-	
-	.container {
-		background-color: #F3F3F3;
-		z-index: -1;
-		width: 1440px;
-		height: 1024px;
-		margin: auto;
-	}
-	
+
     .header	{
     
         position: absolute;
@@ -140,22 +132,12 @@
         gap: 10px;
         color: #4B8D6A;	
     }
-    .article {
-        position: relative;
-        width: 1080px;
-        height: 828px;
-        border-radius: 15px;
-        background: white;
-   		margin: 0 auto;
-   		vertical-align: middle;
-   		top: 148px;
-    }
 
 	.logo_form {
-	display:flex;
-  	background: none;
-	width: 480px;
-	gap: 16px;
+		display:flex;
+	  	background: none;
+		width: 480px;
+		gap: 16px;
   	}
 
 	.bbs_form {
@@ -170,7 +152,7 @@
 		width: 72px;
 	}
 
-	.menuAction_form {
+	.myInfo_form {
 		display:flex;
 	  	background: none;
 		width: 90px;
@@ -189,18 +171,43 @@
     img {
         background: white;
     }
-    
+
+ 	
+ 	input:focus {
+ 		outline: none;
+ 	}
+ 	
+ 	
+ 	
+ 	
+ 	
+ 	
+ 		
+	.container {
+		background-color: #F3F3F3;
+		z-index: -1;
+		width: 1440px;
+		height: 1024px;
+		margin: auto;
+	}
+	
+    .article {
+        position: relative;
+        width: 1080px;
+        height: 828px;
+        border-radius: 15px;
+        background: white;
+   		margin: 0 auto;
+   		vertical-align: middle;
+   		top: 148px;
+    }
+ 	    
     .ku {
     	position:  relative;
     	float: right;
     	top: 120px;
     	background: white;
     }
- 	
- 	
- 	input:focus {
- 	outline: none;
- 	}
  	
      table { 
 	     width: 90%;
@@ -348,11 +355,6 @@
     .content_td{
     	width: 100px;
     }
-    
-	    
- 	input:focus {
- 		outline: none;
- 	}
     
 </style>
 </html>
