@@ -123,6 +123,7 @@
                 <div class="chat">
                     <section class="article">
                         <div id="chatList" class="chatList">
+                            <!--addChat이 실행되면 여기에 채팅이 쌓일거예여-->
                         </div>
                         <div class="input_cont">
                             <form class="input_div">
@@ -292,7 +293,7 @@
         
         #submit_button{
             position: relative;
-            margin: 5px auto;
+            margin: 5px ;
             background: #539A74;       
             border: none;
             width: 65px;
@@ -347,25 +348,32 @@
     }
         .chat-item {
         background-color: #fff;
-        border-radius: 10px;
         padding: 10px;
         margin-bottom: 10px;
+        border-bottom: 1px solid #000000;
     }
-    
+    .chat-item:last-child {
+    border-bottom: none;
+}
     .chat-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 5px;
+        background-color: #fff;
     }
     
     .chat-name {
         font-weight: bold;
+        background-color: #fff;
+        font-family: Pretendard;
     }
     
     .chat-time {
         font-size: 12px;
         color: #888;
+        background-color: #fff;
+        font-family: Pretendard;
     }
     .chatList{
         overflow-y: auto;
@@ -376,6 +384,8 @@
     }
     .chat-content {
         word-break: break-all;
+        background-color: #fff;
+        font-family: Pretendard;
     }
     </style>
     </html>
