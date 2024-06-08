@@ -279,6 +279,8 @@
     border: 3px solid #539A74;
     padding: 0;
     margin: 10px 0 10px 0;
+    display: flex;
+    justify-content: space-between;
 }   
         #text_box{
                display: flex;
@@ -298,7 +300,7 @@
         
         #submit_button{
             position: relative;
-            margin: 5px ;
+            margin: 5px;
             background: #539A74;       
             border: none;
             width: 65px;
