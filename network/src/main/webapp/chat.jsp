@@ -45,15 +45,11 @@
                     }
                 }
             });
-            $('#chatContent').val('');
         }
+
         function addChat(chatName, chatContent, chatTime) {
             $('#chatList').append('<div class="row">' +
                 '<div class="media">' +
-                '<a class="pull-left" href="#">' +
-                '<img class="media-object img-circle" src="http://placehold.co/40">' +
-                '</a>' +
-                '< class="media-body">' +
                 '<h4 class="media-heading">' +
                 chatName +
                 '<span class="small-pull-right">' +
@@ -88,21 +84,22 @@
         </section>
         <div class="chat">
             <section class="article">
-					<form class="input_div">
-						<input type="text" id="text_box" placeholder="내용을 입력해주세요..">
-						<input type="button" id="submit_button" value="보내기"> 
-					</form>
+                <div id="chatList" class="chatList">
+
+                </div>
+                <div class="input_cont">
+				<form class="input_div">
+				    <input type="text" id="text_box" placeholder="내용을 입력해주세요..">
+					<input type="button" id="submit_button" value="보내기"> 
+                </form>
+            </div>
             </section>
             <section class="friends">
                 <ul>
                     <li class="friend_list"> 
-                    	
-                        <img class="profile" src="http://placehold.co/40" />
 						<p id="profile_name">user1</p>
                     </li>
-                    <li class="friend_list"> 
-                    	
-                        <img class="profile" src="http://placehold.co/40" />
+                    <li class="friend_list">
 						<p id="profile_name">user2</p>
                     </li>
                 </ul>
@@ -129,16 +126,15 @@
         display: relative;
 	}
 
-    .article{
-    	display: flex;
-        position: relative;
+    .article {
+        display: flex;
+        flex-direction: column;
+        position: relative; 
         width: 826px;
         height: 828px;
         border-radius: 15px;
-        opacity: 0px;
         background: #FFFFFF;
-   		padding: 0px 10px 20px 0px;
-   		align-items:flex-end;
+        padding: 0px;
     }
 	    
     .friends{
@@ -166,12 +162,7 @@
         cursor: pointer;
         outline: inherit;
     }	
-    
-    img {
-        background: white;
-    }
     .header	{
-    
         position: absolute;
         display: flex;
         padding: 0px 180px;
@@ -212,18 +203,31 @@
         width: 100%;
         padding: 148px 0px 0px 180px;
     }
-
-    .input_div{
-        margin: 0 auto;
-    	 display: flex;
-         position: relative;
-   		 width: 750px;     
-   		 height: 50px;
-   		 border-radius: 15px;
-   		 background: white;
-   		 border: 3px solid  #539A74;
-   		 
+    img{
+        background-color: #FFFFFF;
     }
+    .chatList{
+        overflow-y: auto;
+    margin: 15px; 
+    padding: 15px; 
+    background-color: #FFFFFF; 
+    height: 710px; 
+    }
+    .input_cont{
+        display: flex;
+        justify-content: center;
+    }
+    .input_div {
+    position: absolute; 
+    bottom: 0; 
+    width: 806px;
+    height: 50px;
+    border-radius: 15px;
+    background: white;
+    border: 3px solid #539A74;
+    padding: 0;
+    margin: 10px 0 10px 0;
+}
     
     
     #text_box{
@@ -253,6 +257,7 @@
         font-size : 15px;
     	text-align: center;
         color: white;
+        cursor: pointer;
     }
 
    
@@ -276,6 +281,7 @@
         margin: 0 auto;
     }
     #profile_name {
+        font-family: Pretendard;
     	font-size : 25px;
     	color : #539A74;
     	background: none;
@@ -284,10 +290,9 @@
     .friend_list {    
         background: none;
         display: flex;
-        width: 150px;
-        height: 50px;
         margin: 0 auto;
-        padding: 25px 15px 0px 0px;
+        justify-content: center;
+        padding: 12px;
     }
 </style>
 </html>
