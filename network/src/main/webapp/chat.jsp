@@ -20,16 +20,14 @@
         <title>chat</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script type="text/javascript">    
-        function autoClosingAlert(selector, delay) {
-            var alert = $(selector).alert();
-            alert.show();
-            window.setTimeout(function () { alert.hide(); }, delay);
-        }
+        
             function submitFunction() {
                 var roomID = '<%= roomID %>';
                 var userID = '<%= userID %>';
     
-                var chatContent = $('#chatContent').val();      
+                var chatContent = $('#text_box').val();      
+                
+                console.log("submitFunction called with roomID:", roomID, "userID:", userID);
                 $.ajax({
                     type: "POST",
                     url: "./chatSubmitServlet",
@@ -40,20 +38,27 @@
                     },
                     success: function (result) {
                         if (result == 1) {
-                            autoClosingAlert('#successMessage', 2000);
+                            // autoClosingAlert('#successMessage', 2000);
+                            addFriend(userID);
                         } else if (result == 0) {
-                            autoClosingAlert('#dangerMessage', 2000);
+                            // autoClosingAlert('#dangerMessage', 2000);
                         } else {
-                            autoClosingAlert('#warningMessage', 2000);
+                            // autoClosingAlert('#warningMessage', 2000);
                         }
                     }
                 });
-                $('#chatContent').val('');
+                $('#text_box').val('');
+            }
+            function addFriend(userID) {
+                if ($("#friends ul").find("#friend-" + userID).length == 0) {
+                    $("#friends ul").append('<li class="friend_list" id="friend-' + userID + '"><p id="profile_name">' + userID + '</p></li>');
+                }
             }
             var lastID = 0;
             function chatListFunction(type) {
                 var roomID = '<%= roomID %>';
                 var userID = '<%= userID %>';
+                
                 $.ajax({
                     type: "POST",
                     url: "./chatListServlet",
@@ -89,7 +94,7 @@
             function getInfiniteChat(){
                 setInterval(function(){
                     chatListFunction(lastID);
-                }, 3000);
+                }, 500);
             }  
         
     
@@ -126,30 +131,30 @@
                             <!--addChat이 실행되면 여기에 채팅이 쌓일거예여-->
                         </div>
                         <div class="input_cont">
-                            <form class="input_div">
+                             <form class="input_div" onsubmit="submitFunction(); return false;">
                                 <input type="text" id="text_box" placeholder="내용을 입력해주세요..">
-                                <input type="button" id="submit_button" value="보내기"> 
+                                <input type="button" id="submit_button" value="보내기" onclick="submitFunction()"> 
                             </form>
                         </div>
                     </section>
-                    <section class="friends">
+                    <section class="friends" id= "friends">
                         <ul>
-                            <li class="friend_list"> 
-                                <p id="profile_name">정연우</p>
-                            </li>
-                            <li class="friend_list">
-                                <p id="profile_name">조병규</p>
-                            </li>
-                            <li class="friend_list">
-                                <p id="profile_name">신종윤</p>
-                            </li>
+                             <li class="friend_list" id="friend-정연우"> 
+                            <p id="profile_name">정연우</p>
+                        </li>
+                        <li class="friend_list" id="friend-조병규">
+                            <p id="profile_name">조병규</p>
+                        </li>
+                        <li class="friend_list" id="friend-신종윤">
+                            <p id="profile_name">신종윤</p>
+                        </li>
                         </ul>
                     </section>
                 </div>
         </div>
         <script type="text/javascript"> 
                  $(document).ready(function(){
-                    chatListFunction('ten');
+                    chatListFunction('0');
                     getInfiniteChat();
                 });
         </script>
@@ -253,7 +258,7 @@
     img{
         background-color: #FFFFFF;
     }
-    .chatList{
+    #chatList{
         overflow-y: auto;
     margin: 15px; 
     padding: 15px; 
