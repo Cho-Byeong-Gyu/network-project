@@ -54,7 +54,7 @@
 			<form class="title_form">
 	 			<input type="button" class="back_btn" value=" < " onClick="location.href='./bbs.jsp'">
 	 			<input type="text" class="bbsTitle" value="<%=bbs.getBbsTitle() %>" disabled>
-	 			<input type="button" class="chat_btn" value="채팅방 입장" onClick="location.href='./chat.jsp?bbsID=<%= bbsID %>'">
+	 			<input type="button" class="chat_btn" value="채팅방 입장" onClick="location.href='./chat.jsp?roomID=<%= bbsID %>'">
 			</form>
 		<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
 		<tbody>
