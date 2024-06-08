@@ -23,6 +23,30 @@
 	System.out.println(request.getParameter("bbsTitle"));
 	System.out.println(request.getParameter("bbsContent"));
 
+	/*if(bbs.getBbsTitle()==null || bbs.getBbsContent()==null){
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("alert('입력이 안 된 사항이 있습니다.')");
+		script.println("history.back()");
+		script.println("</script>");
+	}
+	else{
+		BbsDAO bbsDAO = new BbsDAO();
+		int result = bbsDAO.write(bbs.getBbsTitle(), userID, bbs.getBbsContent());
+		if (result==-1){
+			PrintWriter script = response.getWriter();
+			script.println("<script>");
+			script.println("alert('글쓰기에 실패했습니다.')");
+			script.println("history.back()");
+			script.println("</script>");
+		}
+		else{
+			PrintWriter script = response.getWriter();
+			script.println("<script>");
+			script.println("location.href = 'bbs.jsp'");
+			script.println("</script>");
+		}
+	}*/
 	if(userID == null){
 		PrintWriter script = response.getWriter();
 		script.println("<script>");
@@ -74,10 +98,10 @@
 			<section class="board_header">
 				<input type="button" class="back_btn" value=" < " onClick="location.href='./bbs.jsp'">
 				<input type="text" class= "form-control" placeholder="글 제목" name= "bbsTitle" maxlength= "50" value="<%=bbs.getBbsTitle()%>">
-				<input type= "submit" class= "write_btn" value= "수정완료">
+				<input type= "submit" class= "write_btn" value= "작성완료">
 			</section>
 			<section class="board_body">
-				<textarea class= "form-control_2" placeholder="내용을 입력해주세요.." name= "bbsContent" maxlength= "2048"><%= bbs.getBbsContent() %></textarea>
+				<textarea class= "form-control_2" placeholder="내용을 입력해주세요.." name= "bbsContent" maxlength= "2048"><%= bbs.getBbsContent() %>%></textarea>
 			</section>
 		</form>
 	</div>
