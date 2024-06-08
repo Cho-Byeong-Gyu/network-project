@@ -5,7 +5,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>회원가입 테스트</title>
+	<title>회원가입</title>
 </head>
 <header>
 
