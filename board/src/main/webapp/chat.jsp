@@ -144,19 +144,6 @@
                     </form>
                 </div>
             </section>
-            <section class="friends" id= "friends">
-                <ul>
-                     <li class="friend_list" id="friend-정연우"> 
-                    <p id="profile_name">정연우</p>
-                </li>
-                <li class="friend_list" id="friend-조병규">
-                    <p id="profile_name">조병규</p>
-                </li>
-                <li class="friend_list" id="friend-신종윤">
-                    <p id="profile_name">신종윤</p>
-                </li>
-                </ul>
-            </section>
         </div>
 </div>
 
@@ -284,20 +271,11 @@
         display: flex;
         flex-direction: column;
         position: relative; 
-        width: 826px;
+        width: 1080px;
         height: 828px;
         border-radius: 15px;
         background: #FFFFFF;
         padding: 0px;
-    }
-	    
-    .friends{
-        position: relative;
-        display: flex;
-        width: 200px;
-        height: 828px;
-        border-radius: 15px;
-        background: #FFFFFF;
     }
 
     .chat{
@@ -324,7 +302,7 @@
     .input_div {
     position: absolute; 
     bottom: 0; 
-    width: 806px;
+    width: 1000px;
     height: 50px;
     border-radius: 15px;
     background: white;
@@ -334,16 +312,17 @@
     display: flex;
     justify-content: space-between;
 }   
+
     #text_box{
            display: flex;
            position: relative;
-            background: white;  
-            width: 660px; 
+           background: white;  
+           width: 915px; 
           margin: 0px 0px 0px 15px;
           border: none;
           outline: none;
     }
-    
+
     #text_box::placeholder{
            background: white;   
            color: #539A74;
@@ -355,7 +334,7 @@
         margin: 5px;
         background: #539A74;       
         border: none;
-        width: 65px;
+        width: 85px;
         height: 40px;
         border-radius: 10px;
         font-size : 15px;
@@ -364,47 +343,7 @@
         cursor: pointer;
     }
     
-    .friends{
-        position: relative;
-        display: flex;
-        width: 200px;
-        height: 828px;
-        border-radius: 15px;
-        background: #FFFFFF;
-    }
-    ul {
-         border-radius: 15px;
-        width: 100%;
-        list-style-type: none;
-        background: white;   
-    }
-    .li{
-        display: flex;
-        align-items: center;
-        gap: 16px;
-    }
-    .profile{
-        background: white; 
-        width: 50px;
-        height: 50px;
-        border-radius: 100%;     
-        vertical-align: middle;
-        margin: 0 auto;
-    }
-    #profile_name {
-        font-family: Pretendard;
-        font-size : 25px;
-        color : #539A74;
-        background: none;
-        border: none;
-    }
-    .friend_list {    
-        background: none;
-        display: flex;
-        margin: 0 auto;
-        justify-content: center;
-        padding-top: 20px;
-    }
+
         .chat-item {
         background-color: #fff;
         padding: 10px;
